@@ -8,12 +8,16 @@ const showerImg = document.querySelector(".shower img")
 let started = true
 
 for (let imageContainer of imagesContainers) {
-    imageContainer.querySelector(".above").addEventListener("mousemove", (ev) => {
-        onMouseOverImage(imageContainer.querySelector("img"), ev.x, ev.y)
+    let above =  imageContainer.querySelector(".above")
+    let image =  imageContainer.querySelector("img")
+    above.addEventListener("mousemove", (ev) => {
+        onMouseOverImage(image, ev.x, ev.y)
     })
-    imageContainer.querySelector(".above").addEventListener("mouseout", (ev) => {
-        onMouseOutImage()
+    above.addEventListener("touchmove", (ev)=> {
+        onMouseOverImage(image, ev.touches[0].pageX, ev.touches[0].pageY)
     })
+    above.addEventListener("touchend",onMouseOutImage)
+    above.addEventListener("mouseout",onMouseOutImage)
 }
 
 
@@ -43,11 +47,19 @@ function render(image, x, y) {
 
     shower.style.left = x - showerBound.width / 2+"px"
     
+
     if(y > showerBound.height / 2 * 3)
         shower.style.top = y - showerBound.height / 2 * 3 +"px"
     else
         shower.style.top = y + showerBound.height / 2 +"px"
     
+    if(x <= showerBound.width / 2){
+        shower.style.left = x + showerBound.width / 2 +"px"
+        shower.style.top = y - showerBound.height / 2 +"px"
+    }else if(x>= document.body.getBoundingClientRect().right-showerBound.width / 2 ){
+        shower.style.left = x - showerBound.width / 2 * 3+"px"
+        shower.style.top = y - showerBound.height / 2 +"px"   
+    }
 
     showerImg.style.marginLeft = -outX + "px"
     showerImg.style.marginTop = -outY + "px"
