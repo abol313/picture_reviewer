@@ -13,9 +13,12 @@ body{
 }
 
 .container{
-    width:30vw;
+    
+    max-width:30vw;
+    width:fit-content;
     min-width:200px;
-    height:60vh;
+    max-height:60vh;
+    height:fit-content;
     min-height:300px;
     padding:20px;
     background-color:cyan;
@@ -28,11 +31,12 @@ body{
     text-align:center;
     align-items:flex-start;
     justify-content:center;
-    gap:10px;
     align-items:center;
 }
-
-.container img{
+.container .img_cont{
+    position: relative;
+}
+.container .img_cont img{
     
     max-width:100%;
     max-height:100%;
@@ -41,4 +45,27 @@ body{
     filter: contrast(1.5);
     border-radius:20px;
     /* max-width:200px; */
+}
+.container .img_cont .above{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:transparent;
+    z-index:4;
+}
+.shower{
+    position:fixed;
+    width:50px;
+    height:50px;
+    background-repeat:no-repeat;
+    background:repeating-linear-gradient(rgb(50,50,50) 0%,rgb(50,50,50) 20%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 40%),repeating-linear-gradient(to right,rgb(50,50,50) 0%,rgb(50,50,50) 20%,grey 20%,grey 40%);
+    z-index:2;
+    overflow:hidden;
+    display:none;
+    border-radius:100px;
+    box-shadow:0 0 10px #ff5e6c;
+}
+.shower img{
+    filter:contrast(3);
+    width:500px;
 }
