@@ -22,6 +22,7 @@ function onMouseOverImage(el, x, y) {
     console.log(0)
     if (started) {
         console.log(1)
+        shower.querySelector("img").setAttribute("src",el.getAttribute("src"))
         shower.style.display = "inline"
         started = false
     }
