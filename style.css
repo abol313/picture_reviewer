@@ -1,3 +1,9 @@
 /*<!--In the name of kindly generous ALLAH-->
 <!--Thanks ALLAH-->
 */
+
+body{
+    background:linear-gradient(to top, darkcyan 60%,cyan 60%);
+    margin:0;
+    min-height:100vh;
+}
