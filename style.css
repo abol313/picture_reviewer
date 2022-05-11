@@ -6,4 +6,16 @@ body{
     background:linear-gradient(to top, darkcyan 60%,cyan 60%);
     margin:0;
     min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:60vw;
+    height:90vh;
+    background-color:cyan;
+    box-shadow:0 0 200px black;
+    border-radius:20px;
 }
