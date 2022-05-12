@@ -29,12 +29,15 @@ function onMouseOverImage(el, x, y) {
         shower.querySelector("img").setAttribute("src",el.getAttribute("src"))
         shower.style.display = "inline"
         started = false
+        document.body.style.overflow="hidden"
+        document.querySelector(".list").style.overflow="hidden"
     }
     render(el, x, y)
 }
 function onMouseOutImage() {
-    console.log(2)
     started = true
+    document.body.style.overflow="hidden"
+    document.querySelector(".list").style.overflow="hidden"
     shower.style.display = "none"
 }
 function render(image, x, y) {
