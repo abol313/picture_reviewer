@@ -36,8 +36,8 @@ function onMouseOverImage(el, x, y) {
 }
 function onMouseOutImage() {
     started = true
-    document.body.style.overflow="hidden"
-    document.querySelector(".list").style.overflow="hidden"
+    document.body.style.overflow="auto"
+    document.querySelector(".list").style.overflow="auto"
     shower.style.display = "none"
 }
 function render(image, x, y) {
