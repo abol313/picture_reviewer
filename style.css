@@ -17,9 +17,9 @@ body{
     max-width:30vw;
     width:fit-content;
     min-width:200px;
-    max-height:60vh;
+    /* max-height:60vh;
     height:fit-content;
-    min-height:300px;
+    min-height:300px; */
     padding:20px;
     background-color:cyan;
     box-shadow:0 0 20px black;
@@ -29,9 +29,8 @@ body{
     flex-wrap:wrap;
     overflow:hidden;
     text-align:center;
-    align-items:flex-start;
     justify-content:center;
-    align-items:center;
+    
 }
 .container .img_cont{
     position: relative;
@@ -75,5 +74,5 @@ body{
     display:flex;
     overflow: auto;
     max-width:90vw;
-    
+    align-items: stretch;
 }
